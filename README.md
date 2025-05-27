@@ -47,7 +47,7 @@ SentryIoT/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/SentryIoT.git
+git clone https://github.com/it21383366/SentryIOT.git
 cd SentryIoT
 ```
 
