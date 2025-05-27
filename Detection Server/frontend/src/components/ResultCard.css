@@ -1,0 +1,42 @@
+.card-container {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+}
+
+.card-container.danger {
+  background-color: #ffe6e6;
+  border: 2px solid #ff4d4d;
+}
+
+.result-details p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.alert-popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4d;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  animation: fade-in-out 4s ease forwards;
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
