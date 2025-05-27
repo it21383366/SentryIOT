@@ -20,7 +20,12 @@ SentryIoT is a smart, automated threat detection and response system tailored fo
 
 ```
 SentryIoT/
-├── backend/
+├── IOT Device/
+│   ├── netcap.py              # Captures network traffic in chunks and sends to Detection Server
+│   └── README.md              # Instructions for setting up the IoT side
+│
+├── Detection Server/
+│   ├── backend/
 │   ├── dashboard_api.py
 │   ├── detection_log.jsonl
 ├── frontend/
@@ -46,7 +51,21 @@ git clone https://github.com/your-username/SentryIoT.git
 cd SentryIoT
 ```
 
-### 2. Backend
+### 2. IoT Device Setup
+
+```bash
+cd "IOT Device"
+python3 netcap.py
+```
+
+* Requires Python 3
+* Sends 100-packet traffic dumps to a shared `captured_data/` folder
+
+Ensure the IoT device is on the same network and has access to the shared directory on the Detection Server.
+
+### 3. Detection Server Setup
+
+### 3.1. Backend
 
 ```bash
 cd backend
@@ -54,7 +73,7 @@ pip install flask flask-cors
 python3 dashboard_api.py
 ```
 
-### 3. Frontend
+### 3.2. Frontend
 
 ```bash
 cd frontend
@@ -62,18 +81,21 @@ npm install
 npm start
 ```
 
-### 4. Model (Detection)
+### 3.3. Model (Detection)
 
 ```bash
 cd model
 python3 watcher.py
 ```
 
-### 5. Launch the GUI (Unified Control Panel)
+### 4. GUI Launch (Optional)
 
 ```bash
 python3 sentryiot_gui.py
 ```
+
+* Unified GUI to control model, backend, frontend
+* Log view for each module
 
 ---
 
