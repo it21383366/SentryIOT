@@ -20,9 +20,9 @@ SentryIoT is a smart, automated threat detection and response system tailored fo
 
 ```
 SentryIoT/
+└── README.md              # Instructions for setting up
 ├── IOT Device/
 │   ├── netcap.py              # Captures network traffic in chunks and sends to Detection Server
-│   └── README.md              # Instructions for setting up the IoT side
 │
 ├── Detection Server/
 │   ├── backend/
